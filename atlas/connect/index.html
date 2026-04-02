@@ -390,7 +390,7 @@ form.addEventListener('submit', async function(e) {
   submitBtn.innerHTML = '<span style="opacity:.6;letter-spacing:.2em;font-size:.78rem;font-family:var(--mono);">Sending&hellip;</span>';
 
   const payload = {
-    thread:      'atlas',
+    _source:     'Atlas',
     fname,
     lname:       document.getElementById('lname').value.trim(),
     email,
@@ -402,10 +402,11 @@ form.addEventListener('submit', async function(e) {
   };
 
   try {
-    await fetch('https://formspree.io/f/mqegdzzd', {
+    await fetch('https://script.google.com/macros/s/AKfycby009FtnfFP43wcbCw0BA8vkvL6qyOokrrOx3XqNvkZxaAqw1BmmvtJQqsvLvObFr6v/exec', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload),
+      mode: 'no-cors'
     });
   } catch(_) {}
 

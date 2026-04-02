@@ -123,9 +123,10 @@ body{background:var(--char);color:var(--parchment);font-family:var(--sans);line-
 .product-card:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
 .product-status{display:flex;flex-wrap:wrap;gap:0.4rem;margin-bottom:1.25rem;}
 .product-status-badge{font-family:var(--mono);font-size:0.875rem;letter-spacing:0.09em;text-transform:uppercase;color:var(--accent-muted);border:1px solid rgba(184,144,80,0.2);padding:0.22rem 0.6rem;border-radius:2px;white-space:nowrap;}
-.product-name{font-family:var(--serif);font-size:1.5rem;font-weight:400;color:var(--parchment);margin-bottom:0.6rem;line-height:1.2;transition:color 0.2s;}
+.product-name{font-family:var(--serif);font-size:1.35rem;font-weight:300;color:var(--parchment);margin-bottom:0;line-height:1.35;transition:color 0.2s;flex:1;}
 .product-card:hover .product-name{color:#fff;}
-.product-desc{font-family:var(--sans);font-size:0.88rem;font-weight:300;color:#a09f9e;line-height:1.75;flex:1;margin-bottom:1.5rem;transition:color 0.2s;}
+.product-name em{font-style:italic;color:var(--accent-light);}
+.product-desc{font-family:var(--sans);font-size:0.88rem;font-weight:300;color:#a09f9e;line-height:1.75;flex:1;margin-bottom:0;transition:color 0.2s;}
 .product-card:hover .product-desc{color:rgba(216,208,191,0.9);}
 .product-link{font-family:var(--mono);font-size:0.875rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent-muted);display:flex;align-items:center;gap:0.4rem;transition:color 0.2s,gap 0.2s;}
 .product-card:hover .product-link{color:var(--accent-light);gap:0.7rem;}
@@ -157,10 +158,9 @@ footer{position:relative;z-index:1;padding:2rem 2.5rem;display:flex;align-items:
 
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important;opacity:1!important;transform:none!important;}.nav-drawer{transition:none;}.nav-toggle span{transition:none;}}
 @media(max-width:900px){.products-grid{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto;}}
-@media(max-width:680px){.nav-sections{display:none;}.nav-toggle{display:flex;}.nav-drawer.open{display:flex;}.hero-headline{font-size:2.4rem;}.section{padding:5rem 1.5rem;}.num-item{padding-left:1.25rem;}}
+@media(max-width:680px){.nav-sections{display:none;}.nav-toggle{display:flex;}.nav-drawer.open{display:flex;}.hero-headline{font-size:2.4rem;}.section{padding:5rem 1.5rem;}.num-item{padding-left:1.25rem;}.pathways{flex-direction:column;}}
 
 /* ── PAGE TRANSITION VEIL ── */
-}
 @keyframes body-fade-in{from{opacity:0}to{opacity:1}}
 body{animation:body-fade-in 0.5s ease 0.05s both;}
 
@@ -168,7 +168,14 @@ body{animation:body-fade-in 0.5s ease 0.05s both;}
 .hadith-arabic{font-family:var(--serif);font-size:1.3rem;color:var(--accent-light);direction:rtl;text-align:right;line-height:2.2;margin-bottom:1rem;display:block;}
 .hadith-trans{font-family:var(--serif);font-style:italic;font-size:1rem;color:var(--bone);line-height:1.8;margin-bottom:0.75rem;display:block;}
 .hadith-source{font-family:var(--mono);font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--dust);display:block;}
+
+.triptych{margin-top:3rem;display:flex;flex-direction:column;gap:0;max-width:680px;margin-left:auto;margin-right:auto;}
+.triptych-line{font-family:var(--serif);font-weight:300;font-size:clamp(1.3rem,2.5vw,1.75rem);line-height:1.35;color:var(--bone);padding:1.5rem 0;border-bottom:1px solid rgba(240,235,224,0.06);opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease;}
+.triptych-line:last-child{border-bottom:none;}
+.triptych-line.visible{opacity:1;transform:translateY(0);}
+.triptych-line em{font-style:italic;color:var(--accent-light);}
 </style>
+<noscript><style>.reveal,.num-item,.triptych-line{opacity:1!important;transform:none!important;}</style></noscript>
 </head>
 <body>
 
@@ -204,7 +211,7 @@ body{animation:body-fade-in 0.5s ease 0.05s both;}
     <li><a href="#how">How</a></li>
     <li><a href="#connect">Connect</a></li>
   </ul>
-  <a href="#how" class="nav-drawer-cta">Into the Work →</a>
+  <a href="#how" class="nav-drawer-cta">Into the Work &rarr;</a>
 </div>
 
 <main id="main-content">
@@ -235,7 +242,7 @@ body{animation:body-fade-in 0.5s ease 0.05s both;}
           Who we&rsquo;re for, why we exist, and what we&rsquo;re striving for.
         </p>
       </div>
-      <span class="pathway-arrow" aria-hidden="true">↓</span>
+      <span class="pathway-arrow" aria-hidden="true">&darr;</span>
     </a>
 
     <a href="#how" class="pathway arrow-right">
@@ -248,7 +255,7 @@ body{animation:body-fade-in 0.5s ease 0.05s both;}
           Atlas, Moontrance, and BBOS &mdash; three expressions of one intention.
         </p>
       </div>
-      <span class="pathway-arrow" aria-hidden="true">→</span>
+      <span class="pathway-arrow" aria-hidden="true">&rarr;</span>
     </a>
   </nav>
 </section>
@@ -280,9 +287,9 @@ body{animation:body-fade-in 0.5s ease 0.05s both;}
     </h2>
 
     <div class="hadith-block reveal" role="note">
-      <p class="hadith-arabic" lang="ar" dir="rtl">إِذَا مَاتَ الْإِنْسَانُ انْقَطَعَ عَنْهُ عَمَلُهُ إِلَّا مِنْ ثَلَاثَةٍ: إِلَّا مِنْ صَدَقَةٍ جَارِيَةٍ، أَوْ عِلْمٍ يُنْتَفَعُ بِهِ، أَوْ وَلَدٍ صَالِحٍ يَدْعُو لَهُ</p>
+      <p class="hadith-arabic" lang="ar" dir="rtl">&#x625;&#x650;&#x630;&#x64E;&#x627; &#x645;&#x64E;&#x627;&#x62A;&#x64E; &#x627;&#x644;&#x652;&#x625;&#x650;&#x646;&#x633;&#x64E;&#x627;&#x646;&#x64F; &#x627;&#x646;&#x642;&#x64E;&#x637;&#x64E;&#x639;&#x64E; &#x639;&#x64E;&#x646;&#x652;&#x647;&#x64F; &#x639;&#x64E;&#x645;&#x64E;&#x644;&#x64F;&#x647;&#x64F; &#x625;&#x650;&#x644;&#x651;&#x64E;&#x627; &#x645;&#x650;&#x646;&#x652; &#x62B;&#x64E;&#x644;&#x64E;&#x627;&#x62B;&#x64E;&#x629;&#x64D;: &#x625;&#x650;&#x644;&#x651;&#x64E;&#x627; &#x645;&#x650;&#x646;&#x652; &#x635;&#x64E;&#x62F;&#x64E;&#x642;&#x64E;&#x629;&#x64D; &#x62C;&#x64E;&#x627;&#x631;&#x650;&#x64A;&#x64E;&#x629;&#x64D;&#x60C; &#x623;&#x64E;&#x648;&#x652; &#x639;&#x650;&#x644;&#x652;&#x645;&#x64D; &#x64A;&#x64F;&#x646;&#x62A;&#x64E;&#x641;&#x64E;&#x639;&#x64F; &#x628;&#x650;&#x647;&#x650;&#x60C; &#x623;&#x64E;&#x648;&#x652; &#x648;&#x64E;&#x644;&#x64E;&#x62F;&#x64D; &#x635;&#x64E;&#x627;&#x644;&#x650;&#x62D;&#x64D; &#x64A;&#x64E;&#x62F;&#x652;&#x639;&#x64F;&#x648; &#x644;&#x64E;&#x647;&#x64F;</p>
       <p class="hadith-trans">&ldquo;When a man dies, his deeds come to an end except for three: a ceaseless charity, a knowledge which is beneficial, or a virtuous descendant who prays for him.&rdquo;</p>
-      <p class="hadith-source">The Messenger of Allah ﷺ &nbsp;&middot;&nbsp; Sahih Muslim</p>
+      <p class="hadith-source">The Messenger of Allah &#xFDFA; &nbsp;&middot;&nbsp; Sahih Muslim</p>
     </div>
 
     <p class="sec-body reveal" style="margin-top:2.5rem;">
@@ -326,17 +333,14 @@ body{animation:body-fade-in 0.5s ease 0.05s both;}
     <p class="sec-eyebrow reveal">What OGDEN is</p>
     <div class="sec-rule reveal" aria-hidden="true"></div>
     <h2 class="sec-headline reveal" id="what-h">
-      Three domains. One intention.<br><em>All of it in progress.</em>
+      Three expressions<br>of <em>one intention.</em>
     </h2>
-    <p class="sec-body reveal">
-      OGDEN is a name that came from a place &mdash; an oak valley.
-      Something rooted. Something specific.
-      Everything built under it carries that same quality:
-      grounded in a particular person&rsquo;s God-given inclinations,
-      expressed through structured service,
-      offered to communities that need it.
-      None of it is finished. All of it is real.
-    </p>
+    <p class="sec-body reveal" style="margin-top:1.75rem;">Islamic ways to build, operate, and own &mdash; in ways that are worthy of Allah&rsquo;s rahmah.</p>
+    <div class="triptych" aria-label="Three product promises">
+      <p class="triptych-line">A place to stand on earth and remember <em>why it matters.</em></p>
+      <p class="triptych-line">See the land for what it truly is &mdash; before you <em>commit</em> to it.</p>
+      <p class="triptych-line">Build and operate a business without <em>losing yourself</em> in it.</p>
+    </div>
   </div>
 </section>
 
@@ -344,49 +348,35 @@ body{animation:body-fade-in 0.5s ease 0.05s both;}
 <div class="sep" aria-hidden="true"></div>
 <section class="section" id="how" aria-labelledby="products-h">
   <div class="section-inner--wide">
-    <p class="sec-eyebrow reveal">The work, as it stands</p>
-    <div class="sec-rule reveal" aria-hidden="true"></div>
-    <h2 class="sec-headline reveal" id="products-h">
-      Three expressions<br>of <em>one intention.</em>
-    </h2>
-    <p class="sec-body reveal">
-      Each product addresses a different dimension of the same question:
-      how do we build, own, and operate in ways that are worthy of what we believe?
-    </p>
+
 
     <div class="products-grid">
-
-      <!-- ATLAS -->
-      <a href="/atlas/" class="product-card reveal">
-        <div class="product-status">
-          <span class="product-status-badge">Functional Prototype</span>
-          <span class="product-status-badge">Pre-Market Validation</span>
-        </div>
-        <p class="product-name">Atlas</p>
-        <p class="product-desc">A land intelligence and design system for those who want to know the land before they ask anything of it. Soil, water, zoning, ecology, design potential &mdash; mapped before the decision is made.</p>
-        <span class="product-link">Explore Atlas <span aria-hidden="true">→</span></span>
-      </a>
 
       <!-- MOONTRANCE -->
       <a href="/moontrance/" class="product-card reveal">
         <div class="product-status">
-          <span class="product-status-badge">Complete Frameworks</span>
-          <span class="product-status-badge">Welcoming Founding Members</span>
+          <span class="product-status-badge">&#9700; &nbsp; A place to stand on earth and remember why it matters.</span>
         </div>
-        <p class="product-name">Moontrance</p>
-        <p class="product-desc">A faith-rooted land destination in Ontario &mdash; fully designed, actively searching for founding members and the right land. A place to stand in nature and remember why it matters.</p>
-        <span class="product-link">Explore Moontrance <span aria-hidden="true">→</span></span>
+        <p class="product-name">A faith-rooted land destination in Ontario &mdash; fully designed, actively searching for founding members and the right land. A place to stand in nature and remember why it matters.</p>
+        <span class="product-link">Explore Moontrance <span aria-hidden="true">&rarr;</span></span>
       </a>
 
       <!-- BBOS -->
       <a href="/bbos/" class="product-card reveal">
         <div class="product-status">
-          <span class="product-status-badge">LLM Instruction Set</span>
-          <span class="product-status-badge">Market Validation</span>
+          <span class="product-status-badge">&#8297; &nbsp; Build and operate a business without losing yourself in it.</span>
         </div>
-        <p class="product-name">BBOS</p>
-        <p class="product-desc">The Barakah Business Operating System &mdash; a structured framework for running a business as an act of worship. Currently operating as a custom LLM instruction set while the market is validated.</p>
-        <span class="product-link">Explore BBOS <span aria-hidden="true">→</span></span>
+        <p class="product-name">A business operating system that reframes activities as an act of worship.</p>
+        <span class="product-link">Explore BBOS <span aria-hidden="true">&rarr;</span></span>
+      </a>
+
+      <!-- ATLAS -->
+      <a href="/atlas/" class="product-card reveal">
+        <div class="product-status">
+          <span class="product-status-badge">&#9675; &nbsp; See the land for what it truly is &mdash; before you <em>commit</em> to it.</span>
+        </div>
+        <p class="product-name">A land intelligence and design system for those who want to know the land before they ask anything of it. Soil, water, zoning, ecology, design potential &mdash; mapped before the decision is made.</p>
+        <span class="product-link">Explore Atlas <span aria-hidden="true">&rarr;</span></span>
       </a>
 
     </div>
@@ -408,7 +398,7 @@ body{animation:body-fade-in 0.5s ease 0.05s both;}
     </p>
     <a href="/moontrance/connect/" class="cta-btn reveal">
       Get in Touch
-      <span class="cta-btn-arrow" aria-hidden="true">→</span>
+      <span class="cta-btn-arrow" aria-hidden="true">&rarr;</span>
     </a>
   </div>
 </section>
@@ -463,14 +453,10 @@ if(toggle&&drawer){
 }
 
 const obs=new IntersectionObserver(e=>{e.forEach(e=>{if(!e.isIntersecting)return;const l=e.target.closest('.num-list');l?setTimeout(()=>e.target.classList.add('visible'),Array.from(l.children).indexOf(e.target)*90):e.target.classList.add('visible');obs.unobserve(e.target);});},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
-document.querySelectorAll('.reveal,.num-item').forEach(el=>obs.observe(el));
+document.querySelectorAll('.reveal,.num-item,.triptych-line').forEach(el=>obs.observe(el));
 
 const secObs=new IntersectionObserver(e=>{e.forEach(e=>{const l=document.querySelector(`.nav-sections a[data-sec="${e.target.id}"]`);if(l)l.classList.toggle('sec-active',e.isIntersecting);});},{threshold:0.25});
 ['who','why','what','how','connect'].forEach(id=>{const el=document.getElementById(id);if(el)secObs.observe(el);});
-</script>
-
-<script>
-
 </script>
 
 <script>

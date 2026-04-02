@@ -371,7 +371,7 @@ function handleSubmit(thread) {
   }
 
   // Build submission payload
-  const payload = { thread, email };
+  const payload = { _source: 'OGDEN', thread, email };
   if (thread !== 'broad') {
     const ctx = document.getElementById(`${thread}-context`);
     if (ctx) payload.context = ctx.value.trim();

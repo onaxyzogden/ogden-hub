@@ -536,7 +536,7 @@ form.addEventListener('submit', async function(e) {
   submitBtn.innerHTML = '<span style="opacity:.6;letter-spacing:.2em;font-size:.78rem;">Sending…</span>';
 
   const payload = {
-    thread: 'bbos', fname,
+    _source: 'BBOS', fname,
     lname:       document.getElementById('lname').value.trim(),
     email, what_you_do, stage,
     what_cost:   document.getElementById('what_cost').value.trim(),
@@ -544,10 +544,11 @@ form.addEventListener('submit', async function(e) {
   };
 
   try {
-    await fetch('https://formspree.io/f/xdaplnnz', {
+    await fetch('https://script.google.com/macros/s/AKfycby009FtnfFP43wcbCw0BA8vkvL6qyOokrrOx3XqNvkZxaAqw1BmmvtJQqsvLvObFr6v/exec', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload),
+      mode: 'no-cors'
     });
   } catch(_) {}
 
