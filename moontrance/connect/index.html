@@ -210,7 +210,7 @@ body{animation:body-in .55s ease .05s both;}
     <!-- Q1 — Name -->
     <div class="block" id="b1">
       <span class="q-num">01</span>
-      <p class="q-label">Who are you?</p>
+      <h2 class="q-label">Who are you?</h2>
       <span class="q-sub">Your name — the one you&rsquo;d use in a real conversation.</span>
       <div class="field-row">
         <div>
@@ -227,10 +227,10 @@ body{animation:body-in .55s ease .05s both;}
     <!-- Q2 — Email -->
     <div class="block" id="b2">
       <span class="q-num">02</span>
-      <p class="q-label">Where should we reach you?</p>
+      <h2 class="q-label">Where should we reach you?</h2>
       <span class="q-sub">We respond personally — not with a sequence.</span>
       <label for="email" class="sr-only">Email address</label>
-      <input type="text" name="_trap" style="display:none;position:absolute;left:-9999px;" tabindex="-1" aria-hidden="true" autocomplete="off">
+      <input type="text" name="_trap" style="display:none;position:absolute;left:-9999px;" tabindex="-1" aria-hidden="true" aria-label="Leave this field empty" autocomplete="off">
       <input type="text" id="email" name="email" class="field" placeholder="you@yourdomain.com" autocomplete="off" inputmode="email" required>
     </div>
 
@@ -239,7 +239,7 @@ body{animation:body-in .55s ease .05s both;}
     <!-- Q3 — What's calling you -->
     <div class="block" id="b3">
       <span class="q-num">03</span>
-      <p class="q-label">What is calling you?</p>
+      <h2 class="q-label">What is calling you?</h2>
       <span class="q-sub">Choose the one that feels closest to true — you can tell us more below.</span>
       <div class="path-grid" role="group" aria-label="Choose your path">
         <button type="button" class="path-btn" data-path="collective" aria-pressed="false">
@@ -264,7 +264,7 @@ body{animation:body-in .55s ease .05s both;}
     <!-- Q4 — Where you are -->
     <div class="block" id="b4">
       <span class="q-num">04</span>
-      <p class="q-label">Where are you right now?</p>
+      <h2 class="q-label">Where are you right now?</h2>
       <span class="q-sub">Select all that apply.</span>
       <div class="choice-grid" role="group" aria-label="Where you are right now">
         <button type="button" class="choice-btn" data-stage="exploring" aria-pressed="false">I&rsquo;m exploring &mdash; something about this resonates</button>
@@ -280,7 +280,7 @@ body{animation:body-in .55s ease .05s both;}
     <!-- Q5 — What's pulling you -->
     <div class="block" id="b5">
       <span class="q-num">05</span>
-      <p class="q-label">What brought you here?</p>
+      <h2 class="q-label">What brought you here?</h2>
       <span class="q-sub">A line from the page, a feeling, a season of life — whatever is true. This one is optional but we read it closely.</span>
       <label for="what_pulled" class="sr-only">What brought you here</label>
       <textarea id="what_pulled" name="what_pulled" class="field field-ta" placeholder="Whatever it is — we&rsquo;re genuinely glad you&rsquo;re here."></textarea>
@@ -289,7 +289,7 @@ body{animation:body-in .55s ease .05s both;}
     <!-- Q6 — Family -->
     <div class="block" id="b6">
       <span class="q-num">06</span>
-      <p class="q-label">Are you coming with family?</p>
+      <h2 class="q-label">Are you coming with family?</h2>
       <span class="q-sub">Select all that apply &mdash; helps us understand what this conversation might look like.</span>
       <div class="choice-grid" role="group" aria-label="Family situation">
         <button type="button" class="choice-btn" data-family="solo" aria-pressed="false">Just me for now</button>
