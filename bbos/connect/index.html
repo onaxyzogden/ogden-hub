@@ -547,7 +547,7 @@ form.addEventListener('submit', async function(e) {
   try {
     await fetch('https://script.google.com/macros/s/AKfycby009FtnfFP43wcbCw0BA8vkvL6qyOokrrOx3XqNvkZxaAqw1BmmvtJQqsvLvObFr6v/exec', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'text/plain' },
       body: JSON.stringify(payload),
       mode: 'no-cors'
     });
